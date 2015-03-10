@@ -52,6 +52,7 @@ h6 {
 .well {
    background-color: rgba(245, 245, 245, 0.4);
    margin-left: 5%;
+   margin-right: 5%;
 }
 
 .intro-message {

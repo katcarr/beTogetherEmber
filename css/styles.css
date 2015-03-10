@@ -39,25 +39,6 @@ h6 {
     background-size: cover;
 }
 
-.profile-page{
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../img/camp2.JPG) 0 0 no-repeat;
-    background-size: cover;
-    height: 1000px;
-}
-
-.well {
-   background-color: rgba(245, 245, 245, 0.4);
-   margin-left: 5%;
-   margin-right: 5%;
-}
-
-.well ul{
-  list-style: none;
-}
 
 .intro-message {
     position: relative;
@@ -187,4 +168,31 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+/*profile page cs*/
+
+.profile-page{
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/camp2.JPG) 0 0 no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.well {
+   background-color: rgba(245, 245, 245, 0.4);
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+.well ul{
+  list-style: none;
+}
+
+/*trip trmplate page*/
+.our-btn{
+  background-color: #FE5F55;
 }

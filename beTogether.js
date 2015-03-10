@@ -1,0 +1,1 @@
+BeTogether = Ember.Application.create(); 

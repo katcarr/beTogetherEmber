@@ -10,12 +10,13 @@
     </form>
     {{#each trip in model}}
     <ul>
-      <li>{{trip.name}}</li>
+      <li>{{#link-to "trip" trip}}{{trip.name}}{{/link-to}}</li>
     </ul>
     {{/each}}
   </div>
 
   <div class="col-sm-4">
+    {{outlet}}
   </div>
   <div class="col-sm-4">
   </div>

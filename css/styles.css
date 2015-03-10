@@ -55,6 +55,10 @@ h6 {
    margin-right: 5%;
 }
 
+.well ul{
+  list-style: none;
+}
+
 .intro-message {
     position: relative;
     padding-top: 20%;

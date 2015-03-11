@@ -17,7 +17,10 @@ BeTogether.TripController = Ember.ObjectController.extend({
         });
         this.get('model').save();
           this.set('itemName', null);
-    }
+    },
 
+    addCampItems: function(){
+        this.get('model').save();
+    }
   }
 });

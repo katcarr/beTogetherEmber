@@ -2,5 +2,9 @@
 <button class="btn our-btn" {{action "startList"}}>Group Camping List</button>
 {{#if list}}
  <h4>Select Group Gear</h4>
-
+{{#each item in campingListItems }}
+  {{input type="checkbox" checked=campItem}}
+  {{item.name}}
+{{/each}}
+<button type="submit" {{action "addCampItems"}}>Add To Your List</button>
 {{/if}}

@@ -15,6 +15,7 @@ BeTogether.TripController = Ember.ObjectController.extend({
         this.get("campingListItems").then(function(items){
           items.pushObject(addedItem);
         });
+        this.get('model').save();
           this.set('itemName', null);
     }
 

@@ -1,5 +1,5 @@
 BeTogether.CampingListRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find('campingList');
+  model: function(params) {
+    return this.store.find('campingList', params.campingList_id);
   }
 });

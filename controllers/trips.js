@@ -7,7 +7,7 @@ BeTogether.TripsController = Ember.Controller.extend({
 
 
       var newItem = this.store.createRecord('campingListItem', {
-        name: "tent"
+        name: "tent", need: false
       });
 
       newItem.set("trip", newTrip);
@@ -19,10 +19,6 @@ BeTogether.TripsController = Ember.Controller.extend({
       });
 
       newTrip.save();
-      //
-      // newItem.get('trip').then(function(trip){
-      //   trip.save();
-      // });
 
       this.set("tripName", null);
     }

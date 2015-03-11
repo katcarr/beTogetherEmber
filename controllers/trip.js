@@ -3,6 +3,9 @@ BeTogether.TripController = Ember.ObjectController.extend({
   actions: {
     startList: function(){
       this.set("list", true);
+    },
+    addCampItem: function(){
+
     }
   }
 });

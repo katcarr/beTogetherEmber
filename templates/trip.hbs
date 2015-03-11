@@ -3,7 +3,7 @@
 {{#if list}}
  <h4>Select Group Gear</h4>
 {{#each item in campingListItems }}
-  {{input type="checkbox" checked=campItem}}
+  {{input type="checkbox" checked=item.need}}
   {{item.name}}
 {{/each}}
 <button type="submit" {{action "addCampItems"}}>Add To Your List</button>

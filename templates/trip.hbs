@@ -3,9 +3,9 @@
 {{#if individualList}}
   <h4>Select Individual Gear</h4>
   <ul>
-    {{#each item in individualListItems}}
+    {{#each item in individualListItems itemController="individualListItem"}}
       <li>
-        {{input type="checkbox" checked=item.need}}
+        {{input type="checkbox" checked=item.updateNeedStatus}}
         {{item.name}}
     </li>
     {{/each}}
@@ -25,10 +25,10 @@
 {{#if list}}
  <h4>Select Group Gear</h4>
 <ul>
-  {{#each item in campingListItems itemController="campingListItem"}}
+  {{#each groupItem in campingListItems itemController="campingListItem"}}
     <li>
-      {{input type="checkbox" checked=item.need}}
-      {{item.name}}
+      {{input type="checkbox" checked=groupItem.updateNeedStatus}}
+      {{groupItem.name}}
   </li>
   {{/each}}
 </ul>

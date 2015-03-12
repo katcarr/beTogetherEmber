@@ -3,6 +3,9 @@ BeTogether.IndividualListItemController = Ember.ObjectController.extend({
     if(value === undefined){
       return this.get("need");
     }else {
+      if(!this.get("need")){
+        this.set('amount',1);
+      }
       this.set("need", value);
       this.get("model").save();
       return this.get("need");

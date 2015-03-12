@@ -16,7 +16,7 @@
   </ul>
 
   <form class="form-inline">
-    {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
+    {{input type="text" class="form-control" value=individualListItemName placeholder="Other Items"}}
     <button type="submit" class="btn btn-sml" {{action "addItem" "individualListItem"}}>Add</button>
   </form>
 
@@ -41,7 +41,7 @@
     {{/each}}
   </ul>
   <form class="form-inline">
-    {{input type="text" class="form-control" value=Name placeholder="Other Items"}}
+    {{input type="text" class="form-control" value=campingListItemName placeholder="Other Items"}}
     <button type="submit" class="btn btn-sml" {{action "addItem" 'campingListItem'}}>Add</button>
   </form>
   <br>

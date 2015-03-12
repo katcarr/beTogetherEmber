@@ -15,9 +15,10 @@ BeTogether.TripController = Ember.ObjectController.extend({
 
     addItem: function(itemType){
       var addedItem = this.store.createRecord(itemType, {
-        name: this.get('itemName'),
+        name: this.get(itemType + "Name"),
         need: true,
-        trip: this.get('model')
+        trip: this.get('model'),
+        amount: 1
       });
 
       addedItem.save();
@@ -27,7 +28,8 @@ BeTogether.TripController = Ember.ObjectController.extend({
       });
 
       this.get('model').save();
-      this.set('itemName', null);
+      this.set(itemType + "Name", null);
+
     },
 
     showCompleteList: function(){

@@ -5,6 +5,7 @@ BeTogether.IndividualListItemController = Ember.ObjectController.extend({
     }else {
       this.set("need", value);
       this.get("model").save();
+      return this.get("need");
     }
   }.property('model.updateNeedStatus'),
 

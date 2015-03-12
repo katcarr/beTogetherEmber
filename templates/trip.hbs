@@ -34,6 +34,9 @@
       <li>
         {{input type="checkbox" checked=groupItem.updateNeedStatus}}
         {{groupItem.name}}
+        <button class="incrementButton" {{action "less"}}>-</button>
+        {{input value=groupItem.amount class="qty"}}
+        <button class="incrementButton" {{action "more"}}>+</button>
     </li>
     {{/each}}
   </ul>

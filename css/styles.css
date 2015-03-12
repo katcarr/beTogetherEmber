@@ -192,9 +192,36 @@ p.copyright {
   list-style: none;
 }
 
-/*trip trmplate page*/
+/*trip template page*/
 .our-btn{
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #FE5F55;
 }
+
+/*incrementer button styling*/
+
+#myform {
+    text-align: center;
+    padding: 5px;
+    border: 1px dotted #ccc;
+    margin: 2%;
+}
+.qty {
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    color: black;
+}
+
+.incrementButton{
+  width: 20px;
+  height: 15px;
+  margin: 5px;
+  padding-bottom: 20px;
+  color: black;
+  text-align: center;
+}
+
+
+/*incrementer button styling ends*/

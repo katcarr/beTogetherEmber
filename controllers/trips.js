@@ -3,7 +3,6 @@ BeTogether.TripsController = Ember.Controller.extend({
   actions: {
     createTrip: function(){
 
-
       var newTrip = this.store.createRecord('trip', {
         name: this.get("tripName")
       });
@@ -53,8 +52,8 @@ BeTogether.TripsController = Ember.Controller.extend({
 
       this.set("tripName", null);
     },
+
     showTrip: function(){
-      debugger;
       this.set('showTrip', true);
     }
   }

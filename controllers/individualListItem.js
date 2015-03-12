@@ -1,5 +1,4 @@
 BeTogether.IndividualListItemController = Ember.ObjectController.extend({
-  amount: 0,
   updateNeedStatus: function(key, value){
     if(value === undefined){
       return this.get("need");

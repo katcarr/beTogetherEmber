@@ -1,10 +1,11 @@
 BeTogether.TripController = Ember.ObjectController.extend({
-  list: false,
+  lists: false,
   individualList: false,
+  groupList: false,
 
   actions: {
-    startList: function(){
-      this.set("list", !this.get('list'));
+    editGroupList: function(){
+      this.set("groupList", !this.get('groupList'));
     },
 
     editIndividualList: function(){
@@ -28,9 +29,10 @@ BeTogether.TripController = Ember.ObjectController.extend({
       this.set('itemName', null);
     },
 
-    addCampItems: function(){
-      this.set('list', false);
-
+    showCompleteList: function(){
+      this.set('lists', !this.get('lists'));
+      this.set('individualList', false);
+      this.set('groupList', false);
     }
   }
 });

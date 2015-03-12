@@ -1,5 +1,6 @@
 <h3>{{name}}</h3>
 <button class="btn our-btn" {{action "editIndividualList"}}>Edit Individual Camping List</button>
+
 {{#if individualList}}
   <h4>Select Individual Gear</h4>
   <ul>
@@ -7,9 +8,10 @@
       <li>
         {{input type="checkbox" checked=item.updateNeedStatus}}
         {{item.name}}
-    </li>
+      </li>
     {{/each}}
   </ul>
+
   <form class="form-inline">
     {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
     <button type="submit" class="btn btn-sml" {{action "addItem" "individualListItem"}}>Add</button>
@@ -20,31 +22,48 @@
 
 
 
-<button class="btn our-btn" {{action "startList"}}>Edit Group Camping List</button>
+<button class="btn our-btn" {{action "editGroupList"}}>Edit Group Camping List</button>
 <br>
-{{#if list}}
+{{#if groupList}}
  <h4>Select Group Gear</h4>
-<ul>
-  {{#each groupItem in campingListItems itemController="campingListItem"}}
-    <li>
-      {{input type="checkbox" checked=groupItem.updateNeedStatus}}
-      {{groupItem.name}}
-  </li>
-  {{/each}}
-</ul>
-<form class="form-inline">
-  {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
-  <button type="submit" class="btn btn-sml" {{action "addItem" 'campingListItem'}}>Add</button>
-</form>
-<br>
-{{else}}
+  <ul>
+    {{#each groupItem in campingListItems itemController="campingListItem"}}
+      <li>
+        {{input type="checkbox" checked=groupItem.updateNeedStatus}}
+        {{groupItem.name}}
+    </li>
+    {{/each}}
+  </ul>
+  <form class="form-inline">
+    {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
+    <button type="submit" class="btn btn-sml" {{action "addItem" 'campingListItem'}}>Add</button>
+  </form>
+  <br>
+{{/if}}
+
+{{#if lists}}
+  <h3>Group Items</h3>
   {{#each item in campingListItems}}
+
     {{#if item.need}}
-    <ul>
-      <li>{{item.name}}</li>
-    </ul>
+      <ul>
+        <li>{{item.name}}</li>
+      </ul>
     {{/if}}
+
+  {{/each}}
+
+  <h3>Individual Items</h3>
+  {{#each item in individualListItems}}
+
+    {{#if item.need}}
+      <ul>
+        <li>{{item.name}}</li>
+      </ul>
+    {{/if}}
+
   {{/each}}
 {{/if}}
 
-<button type="submit" class="btn our-btn" {{action "addCampItems"}}>View Your List</button>
+
+<button type="submit" class="btn our-btn" {{action "showCompleteList"}}>View Your List</button>

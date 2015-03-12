@@ -10,16 +10,19 @@
     </form>
     {{#each trip in model itemController ="trip"}}
     <ul>
-      <li>{{#link-to "trip" trip}}{{trip.name}}{{/link-to}}</li>
+      <span {{action "showTrip"}}>
+        <li>{{#link-to "trip" trip }}{{trip.name}}{{/link-to}}</li>
+      </span>
     </ul>
     {{/each}}
   </div>
 
 
+{{#if showTrip}}
   <div class="col-sm-5 well">
     {{outlet}}
   </div>
-
+{{/if}}
 
 
 </div>

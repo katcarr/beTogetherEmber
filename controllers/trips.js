@@ -1,4 +1,5 @@
 BeTogether.TripsController = Ember.Controller.extend({
+  showTrip: false,
   actions: {
     createTrip: function(){
 
@@ -51,6 +52,10 @@ BeTogether.TripsController = Ember.Controller.extend({
       newTrip.save();
 
       this.set("tripName", null);
+    },
+    showTrip: function(){
+      debugger;
+      this.set('showTrip', true);
     }
   }
 });

@@ -3,6 +3,7 @@ BeTogether.TripController = Ember.ObjectController.extend({
   individualList: false,
   groupList: false,
 
+
   actions: {
     editGroupList: function(){
       this.set("groupList", !this.get('groupList'));
@@ -34,5 +35,6 @@ BeTogether.TripController = Ember.ObjectController.extend({
       this.set('individualList', false);
       this.set('groupList', false);
     }
+
   }
 });

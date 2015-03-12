@@ -1,5 +1,22 @@
 <h3>{{name}}</h3>
-<button class="btn our-btn" {{action "startList"}}>Group Camping List</button>
+<button class="btn our-btn" {{action "editIndividualList"}}>Edit Individual Camping List</button>
+{{#if individualList}}
+  <h4>Select Individual Gear</h4>
+  <ul>
+    {{#each item in individualListItems}}
+      <li>
+        {{input type="checkbox" checked=item.need}}
+        {{item.name}}
+    </li>
+    {{/each}}
+  </ul>
+
+{{/if}}
+
+
+
+
+<button class="btn our-btn" {{action "startList"}}>Edit Group Camping List</button>
 {{#if list}}
  <h4>Select Group Gear</h4>
 <ul>

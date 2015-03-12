@@ -1,8 +1,14 @@
 BeTogether.TripController = Ember.ObjectController.extend({
   list: false,
+  individualList: false,
+
   actions: {
     startList: function(){
       this.set("list", true);
+    },
+
+    editIndividualList: function(){
+      this.set("individualList", true);
     },
 
     addItem: function(){

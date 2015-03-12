@@ -10,6 +10,10 @@
     </li>
     {{/each}}
   </ul>
+  <form class="form-inline">
+    {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
+    <button type="submit" class="btn btn-sml" {{action "addItem" "individualListItem"}}>Add</button>
+  </form>
 
 {{/if}}
 
@@ -17,6 +21,7 @@
 
 
 <button class="btn our-btn" {{action "startList"}}>Edit Group Camping List</button>
+<br>
 {{#if list}}
  <h4>Select Group Gear</h4>
 <ul>
@@ -29,10 +34,9 @@
 </ul>
 <form class="form-inline">
   {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
-  <button type="submit" class="btn btn-sml" {{action "addItem"}}>Add</button>
+  <button type="submit" class="btn btn-sml" {{action "addItem" 'campingListItem'}}>Add</button>
 </form>
 <br>
-<button type="submit" class="btn our-btn" {{action "addCampItems"}}>View Your List</button>
 {{else}}
   {{#each item in campingListItems}}
     {{#if item.need}}
@@ -42,3 +46,5 @@
     {{/if}}
   {{/each}}
 {{/if}}
+
+<button type="submit" class="btn our-btn" {{action "addCampItems"}}>View Your List</button>

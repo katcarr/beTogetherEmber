@@ -4,21 +4,21 @@ BeTogether.TripController = Ember.ObjectController.extend({
 
   actions: {
     startList: function(){
-      this.set("list", true);
+      this.set("list", !this.get('list'));
     },
 
     editIndividualList: function(){
-      this.set("individualList", true);
+      this.set("individualList", !this.get("individualList"));
     },
 
-    addItem: function(){
-      var addedItem = this.store.createRecord("campingListItem", {
+    addItem: function(itemType){
+      var addedItem = this.store.createRecord(itemType, {
         name: this.get('itemName'),
         need: true,
         trip: this.get('model')
       });
       addedItem.save();
-      this.get("campingListItems").then(function(items){
+      this.get(itemType + "s").then(function(items){
         items.pushObject(addedItem);
       });
 

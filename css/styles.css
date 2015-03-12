@@ -194,5 +194,7 @@ p.copyright {
 
 /*trip trmplate page*/
 .our-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #FE5F55;
 }

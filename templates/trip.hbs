@@ -6,7 +6,9 @@
   {{input type="checkbox" checked=item.need}}
   {{item.name}}
 {{/each}}
-{{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
-<button type="submit" class="btn btn-sml" {{action "addItem"}}>Add</button>
+<form>
+  {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
+  <button type="submit" class="btn btn-sml" {{action "addItem"}}>Add</button>
+</form>
 <button type="submit" class="btn our-btn" {{action "addCampItems"}}>View Your List</button>
 {{/if}}

@@ -5,14 +5,23 @@
 <ul>
   {{#each item in campingListItems itemController="campingListItem"}}
     <li>
-      {{input type="checkbox" checked=item.updateNeedStatus}}
+      {{input type="checkbox" checked=item.need}}
       {{item.name}}
   </li>
   {{/each}}
 </ul>
-<form>
+<form class="form-inline">
   {{input type="text" class="form-control" value=itemName placeholder="Other Items"}}
   <button type="submit" class="btn btn-sml" {{action "addItem"}}>Add</button>
 </form>
+<br>
 <button type="submit" class="btn our-btn" {{action "addCampItems"}}>View Your List</button>
+{{else}}
+  {{#each item in campingListItems}}
+    {{#if item.need}}
+    <ul>
+      <li>{{item.name}}</li>
+    </ul>
+    {{/if}}
+  {{/each}}
 {{/if}}

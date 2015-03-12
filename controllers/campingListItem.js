@@ -1,9 +1,11 @@
 BeTogether.CampingListItemController= Ember.ObjectController.extend({
-  checked: false,
-  actions: {
-    updateNeedStatus: function(){
-      this.set("need", !this.get("need"));
-    }
-  }
+  updateNeedStatus: function(key,value){
+      if(value === undefined){
+        return this.get("need");
+      }else {
+        this.set("need",value);
+        this.get('model').save();
+      }
+  }.property('model.updateNeedStatus')
 
 });

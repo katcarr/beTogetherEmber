@@ -12,11 +12,12 @@ BeTogether.TripController = Ember.ObjectController.extend({
         trip: this.get('model')
       });
       addedItem.save();
-        this.get("campingListItems").then(function(items){
-          items.pushObject(addedItem);
-        });
-        this.get('model').save();
-          this.set('itemName', null);
+      this.get("campingListItems").then(function(items){
+        items.pushObject(addedItem);
+      });
+
+      this.get('model').save();
+      this.set('itemName', null);
     },
 
     addCampItems: function(){

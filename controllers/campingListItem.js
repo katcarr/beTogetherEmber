@@ -7,6 +7,9 @@ BeTogether.CampingListItemController= Ember.ObjectController.extend({
         if(!this.get("need")){
           this.set('amount',1);
         }
+        else{
+          this.set('amount', 0);
+        }
 
         this.set("need",value);
         this.get('model').save();
@@ -17,6 +20,8 @@ BeTogether.CampingListItemController= Ember.ObjectController.extend({
   actions: {
     more: function() {
       this.incrementProperty('amount');
+      this.set("need", true);
+      this.get('model').save();
     },
     less: function() {
       this.decrementProperty('amount');

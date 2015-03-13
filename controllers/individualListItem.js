@@ -1,11 +1,26 @@
 BeTogether.IndividualListItemController = Ember.ObjectController.extend({
-
-
+  original: true,
   actions: {
     more: function() {
       this.incrementProperty('amount');
       this.set("need", true);
       this.get('model').save();
+
+      var newIndividualListItem = this.store.createRecord('individualListItem',{
+        name: this.get("name"), need: true, amount: 1, trip: this.get('trip')
+      });
+
+      newIndividualListItem.set("original", false);
+
+      newIndividualListItem.save();
+      debugger;
+
+      var trip = this.get('trip');
+
+      trip.get("individualListItems").then(function(items){
+        items.pushObject(newIndividualListItem);
+      });
+
     },
     less: function() {
       this.decrementProperty('amount');

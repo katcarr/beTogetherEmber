@@ -10,7 +10,7 @@ BeTogether.CampingListItemController= Ember.ObjectController.extend({
         name: this.get("name"), need: true, amount: 1, trip: this.get('trip')
       });
 
-      newCampingListItem.set("orginal", false);
+      newCampingListItem.set("original", false);
 
       newCampingListItem.save();
 

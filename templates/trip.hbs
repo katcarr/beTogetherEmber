@@ -6,7 +6,6 @@
   <ul>
     {{#each item in individualListItems itemController="individualListItem"}}
       <li>
-        {{input type="checkbox" checked=item.updateNeedStatus}}
         {{item.name}}
         <button class="incrementButton" {{action "less"}}>-</button>
         {{input value=item.amount class="qty"}}
@@ -32,7 +31,6 @@
   <ul>
     {{#each groupItem in campingListItems itemController="campingListItem"}}
       <li>
-        {{input type="checkbox" checked=groupItem.updateNeedStatus}}
         {{item.amount}} {{groupItem.name}}
         <button class="incrementButton" {{action "less"}}>-</button>
         {{input value=groupItem.amount class="qty"}}

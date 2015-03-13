@@ -7,6 +7,8 @@ BeTogether.TripsController = Ember.Controller.extend({
           name: this.get("tripName")
         });
 
+        newTrip.save();
+
         var individualListItem = this.store.createRecord('individualListItem', {
           name: "sleeping-bag", need: false, trip: newTrip, amount: 0
         });

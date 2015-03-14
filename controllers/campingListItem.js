@@ -14,10 +14,11 @@ BeTogether.CampingListItemController= Ember.ObjectController.extend({
 
       newCampingListItem.save();
 
-      var trip = this.get('trip');
-
-      trip.get("campingListItems").then(function(items){
-        items.pushObject(newCampingListItem);
+      this.get('trip').then(function(trip){
+        trip.get("campingListItems").then(function(items){
+          items.pushObject(newCampingListItem);
+          trip.save();
+        });
       });
 
     },

@@ -6,13 +6,15 @@ BeTogether.CampingListItemController= Ember.ObjectController.extend({
       this.set("need", true);
       this.get('model').save();
 
-      var newCampingListItem = this.store.createRecord('campingListItem',{
-        name: this.get("name"), need: true, amount: 1, trip: this.get('trip')
-      });
+      if(this.get('amount') !== 1){
+        var newCampingListItem = this.store.createRecord('campingListItem',{
+          name: this.get("name"), need: true, amount: 1, trip: this.get('trip'),
+          original: false
+        });
+        newCampingListItem.save();
+      }
 
-      newCampingListItem.set("original", false);
 
-      newCampingListItem.save();
 
       this.get('trip').then(function(trip){
         trip.get("campingListItems").then(function(items){
